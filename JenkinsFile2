@@ -51,9 +51,9 @@ pipeline {
         stage("Push to Docker Hub") {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
-                    sh "docker tag my-tomcat-app:latest devopsstuff09/devops2:latest"
+                    sh "docker tag my-tomcat-app:latest pranish89/devops2:latest"
                     sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
-                    sh "docker push devopsstuff09/devops2:latest"
+                    sh "docker push pranish89/devops2:latest"
                     echo 'Docker image pushed to Docker Hub successfully'
                 }
             }
