@@ -61,7 +61,7 @@ pipeline {
         stage("Deploy to Kubernetes") {
             steps {
                 
-                    withKubeConfig([credentialsId: 'kubernetes-credentials', serverUrl: 'https://192.168.12.164:6443']) {
+                    withKubeConfig([credentialsId: 'kubernetes-credentials', serverUrl: 'https://172.31.0.237:6443']) {
     //                    sh 'kubectl apply -f deployment.yaml'
                         sh 'kubectl get pods'
                     }
